@@ -21,7 +21,6 @@ public class BitmapUtil {
      * @param imageView
      */
     public static void setImageViewByImagLoading(Context mContext, String Path, ImageView imageView) {
-//        Log.e("BitmapUtil-->Path:", Path);
         String imagePath;
         if (Path.trim().toString().startsWith("https://") || Path.trim().toString().startsWith("http://") || Path.trim().toString().startsWith("file://")) {
             imagePath = Path.trim().toString();
@@ -29,6 +28,5 @@ public class BitmapUtil {
             imagePath = "file://" + Path.trim().toString();
         }
         PicassoUtils.setAvatarImg(mContext, imagePath, imageView);
-//        Log.e("BitmapUtil-->imagePath:", imagePath);
     }
 }

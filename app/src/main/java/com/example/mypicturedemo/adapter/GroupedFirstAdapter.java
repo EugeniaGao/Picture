@@ -1,11 +1,12 @@
-package com.example.mypicturedemo;
+package com.example.mypicturedemo.adapter;
 
 import android.content.Context;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import com.example.mypicturedemo.R;
 import com.example.mypicturedemo.bean.ChildBean;
 import com.example.mypicturedemo.bean.GroupBean;
+import com.example.mypicturedemo.util.BitmapUtil;
 import com.ycbjie.adapter.AbsGroupAdapter;
 import com.ycbjie.adapter.GroupViewHolder;
 import java.util.ArrayList;
@@ -23,10 +24,11 @@ import java.util.List;
 public class GroupedFirstAdapter extends AbsGroupAdapter {
 
     private List<GroupBean> mGroups;
-
+    private Context mContext;
     public GroupedFirstAdapter(Context context, List<GroupBean> groups) { //看一下有几组
         super(context);
         mGroups = groups;
+        mContext=context;
     }
 
     @Override
@@ -78,25 +80,16 @@ public class GroupedFirstAdapter extends AbsGroupAdapter {
 
     @Override
     public void onBindFooterViewHolder(GroupViewHolder holder, int groupPosition) { //脚上数据的绑定
-//        GroupBean entity = mGroups.get(groupPosition);
-//        ImageView imageView = holder.get(R.id.iv_image);
-////        TextView tvFooterMore = holder.get(R.id.tv_footer_more);
-//        String footer = entity.getFooter();
-//        if (footer==null || footer.length()==0){
-//            //设置不可见
-//            imageView.setVisibility(View.GONE);
-////            tvFooterMore.setVisibility(View.GONE);
-//        } else {
-//            //设置可见
-//            imageView.setVisibility(View.VISIBLE);
-////            tvFooterMore.setVisibility(View.VISIBLE);
-//        }
+
     }
 
     @Override
     public void onBindChildViewHolder(GroupViewHolder holder, int groupPosition, int childPosition) { //孩子数据的绑定
-//        ChildBean entity = mGroups.get(groupPosition).getChildren().get(childPosition);
-//        ImageView imageView = holder.get(R.id.iv_image);
+        ChildBean childBean = mGroups.get(groupPosition).getChildren().get(childPosition);
+        ImageView imageView = holder.get(R.id.dragGridView_image); //加号的布局
+        //解析bean里面的数据为图片进行加载显示
+        BitmapUtil.setImageViewByImagLoading(mContext, childBean.getChild(), imageView);
+
     }
 
 }

@@ -21,18 +21,14 @@ import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.mypicturedemo.util.BitmapUtil;
 import com.example.mypicturedemo.util.FileUtil;
 import com.example.mypicturedemo.util.FinalNumInter;
-
 import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 

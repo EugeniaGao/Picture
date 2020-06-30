@@ -3,4 +3,14 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+    <color name="bgWhiteColor">#ffffff</color>
+    <color name="btnPressed">#6878DB</color>
+    <color name="themeColor">#195ED7</color>
+    <color name="lineColor">#D2C7CFDF</color>
+    <color name="blackColor">#000000</color>
+    <color name="grayColor">#BBB9BE</color>
+    <color name="black">#060609</color>
+    <color name="trans">#11000000</color>
+    <color name="clearcolor">#00000000</color>
+    <color name="transparent">#00000000</color>
 </resources>
